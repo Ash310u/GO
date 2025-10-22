@@ -57,3 +57,39 @@ var s = make([]int, 1000) // No manual cleanup—Go’s GC has your back!
 ```
 
 ---
+
+
+### 7️⃣ **Packages and Modules in Go**
+
+> 📦 *Organize code and share it easily!*
+
+#### **Packages**
+- A **package** is a way to group related Go files together. Every Go file belongs to a package.
+- You import packages to use their exported functions, types, etc.
+- Example:
+    ```go
+    package math
+
+    func Add(a, b int) int {
+        return a + b
+    }
+    ```
+    In another file:
+    ```go
+    import "math"
+
+    result := math.Add(1, 2)
+    ```
+
+#### **Modules**
+- A **module** is a collection of related Go packages with versioning, often representing an entire project or library.
+- Modules let you manage dependencies easily with `go.mod` files.
+- To initialize a module:
+    ```
+    go mod init github.com/yourusername/projectname
+    ```
+- `go.mod` keeps track of your requirements and versions.
+
+> 🗂️ **Summary:**  
+> - Use **packages** to organize code within a project.
+> - Use **modules** to manage dependencies and share code across projects!
