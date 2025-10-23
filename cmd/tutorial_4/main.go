@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	// ---------------- Arrays ----------------
+	// 1. Explicit type and length with initialization
+	var arr1 [5]int32 = [5]int32{1, 2, 3, 4, 5}
+	// 2. Type inference, length specified
+	var arr2 = [5]int32{10, 20, 30, 40, 50}
+	// 3. Shorthand using :=
+	arr3 := [5]int{100, 200, 300, 400, 500}
+	// 4. Compiler infers the length
+	// The '...' in [...]string tells Go to infer the array length based on the number of elements provided.
+	arr4 := [...]string{"Go", "Rust", "Python"} // Here, arr4 becomes an array of length 3, initialized with the given values.
+	// 5. Declaring without initializing, zero values
+	var arr5 [3]float64
+	arr5[0] = 1.1
+	arr5[1] = 1.2
+	arr5[2] = 1.3
+	fmt.Println("Array1:", arr1)
+	fmt.Println("Array2:", arr2)
+	fmt.Println("Array3:", arr3)
+	fmt.Println("Array4:", arr4)
+	fmt.Println("Array5:", arr5)
+
+}
