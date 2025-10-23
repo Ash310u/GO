@@ -26,7 +26,7 @@ func main() {
 	fmt.Println("Array4:", arr4)
 	fmt.Println("Array5:", arr5)
 
-	// Slices
+	// ---------------- Slices ----------------
 	slice := []string{"apple", "banana", "cherry"}
 	slice = append(slice, "date")
 	fmt.Println("Slice after append:", slice)
@@ -35,4 +35,15 @@ func main() {
 	// In our example, slice = []string{"apple", "banana", "cherry", "date"}
 	// slice[1:3] will be []string{"banana", "cherry", "date"}
 	fmt.Println("Slice[1:3]:", slice[1:4])
+
+	// Maps
+	m := make(map[string]int)
+	m["foo"] = 42
+	m["bar"] = 27
+	fmt.Println("Map:", m)
+	val, exists := m["foo"]
+	if exists {
+		fmt.Println("Value for key 'foo':", val)
+	}
+
 }
