@@ -28,6 +28,19 @@ func main() {
 		fmt.Printf("The result of the integer division is %v with remainder %v\n", result, remainder)
 	}
 
+	// Example of using switch statement to handle various division scenarios
+	switch {
+	case err != nil:
+		fmt.Println("Error occurred during division, can't show results in switch statement.")
+	case denominator == 0:
+		fmt.Println("Cannot divide by zero.")
+	case denominator == numerator:
+		fmt.Println("Numerator is equal to Denominator in switch: result =", result)
+	case remainder == 0:
+		fmt.Println("Perfect division (no remainder) in switch, result:", result)
+	default:
+		fmt.Printf("Switch: %v divided by %v gives quotient %v and remainder %v\n", numerator, denominator, result, remainder)
+	}
 }
 
 func PrintMe(printValue string) {
