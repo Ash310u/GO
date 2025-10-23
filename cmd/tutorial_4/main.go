@@ -30,13 +30,14 @@ func main() {
 	slice := []string{"apple", "banana", "cherry"}
 	slice = append(slice, "date")
 	fmt.Println("Slice after append:", slice)
-	// How does this work?
 	// slice[1:3] creates a new slice starting from index 1 (inclusive) up to index 4 (exclusive).
 	// In our example, slice = []string{"apple", "banana", "cherry", "date"}
 	// slice[1:3] will be []string{"banana", "cherry", "date"}
 	fmt.Println("Slice[1:3]:", slice[1:4])
 
-	// Maps
+	// ---------------- Maps ----------------
+	// The 'make' function is used in Go to create slices, maps, and channels.
+	// Here, it creates an empty map with keys of type string and values of type int.
 	m := make(map[string]int)
 	m["foo"] = 42
 	m["bar"] = 27
@@ -46,4 +47,59 @@ func main() {
 		fmt.Println("Value for key 'foo':", val)
 	}
 
+	// Looping
+	fmt.Println("\nLoop: array values")
+	for i := 0; i < len(arr1); i++ {
+		fmt.Println(i, arr1[i])
+	}
+
+	fmt.Println("\nLoop: slice values with range")
+	for index, val := range slice {
+		fmt.Printf("Index %d: %s\n", index, val)
+	}
+
+	fmt.Println("\nLoop: map key-values")
+	for k, v := range m {
+		fmt.Printf("Key: %s, Value: %d\n", k, v)
+	}
+
+	// Loop control
+	fmt.Println("\nLoop control with continue/break")
+	for i := 0; i < 5; i++ {
+		if i == 2 {
+			fmt.Println("skip 2")
+			continue
+		}
+		if i == 4 {
+			fmt.Println("break at 4")
+			break
+		}
+		fmt.Println("i:", i)
+	}
+
+	// Struct
+	// In Go, struct field names must start with a capital letter if you want to access them from other packages (exported).
+	// If the struct is only used within the same package, you may use lowercase, but then the fields will not be accessible from outside.
+	type Person struct {
+		Name string
+		Age  int
+		// name string // unexported (accessible only within this package)
+		// age  int    // unexported (accessible only within this package)
+	}
+	person := Person{Name: "Alice", Age: 30}
+	fmt.Println("\nStruct value:", person)
+	fmt.Println("Person's Name:", person.Name)
+	fmt.Println("Person's Age:", person.Age)
+
+	// Slice of structs
+	people := []Person{
+		{Name: "Bob", Age: 25},
+		{Name: "Carol", Age: 27},
+	}
+
+	people = append(people, person)
+	fmt.Println("\nSlice of structs:")
+	for i, p := range people {
+		fmt.Printf("Name %d : %s, Age: %d\n", i, p.Name, p.Age)
+	}
 }
