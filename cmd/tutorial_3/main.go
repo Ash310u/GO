@@ -41,6 +41,21 @@ func main() {
 	default:
 		fmt.Printf("Switch: %v divided by %v gives quotient %v and remainder %v\n", numerator, denominator, result, remainder)
 	}
+	// Example: Switch on a string representing an operation
+	// operation := "add"
+	// switch operation {
+	// case "add":
+	// 	fmt.Println("Adding two numbers!")
+	// case "subtract":
+	// 	fmt.Println("Subtracting two numbers!")
+	// case "multiply":
+	// 	fmt.Println("Multiplying two numbers!")
+	// case "divide":
+	// 	fmt.Println("Dividing two numbers!")
+	// default:
+	// 	fmt.Println("Unknown operation!")
+	// }
+
 }
 
 func PrintMe(printValue string) {
