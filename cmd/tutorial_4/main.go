@@ -31,7 +31,10 @@ func main() {
 	// 1. Literal initialization (most common)
 	slice1 := []string{"apple", "banana", "cherry"}
 	// 2. Using make() to create a slice with length (and optional capacity)
-	slice2 := make([]int, 3) // length 3, capacity 3, zero-initialized
+	//  FUN FACT
+	// Preallocating the length (and capacity) with make makes appending and indexing operations faster,
+	// as the underlying array doesn't need to grow and reallocate as often.
+	slice2 := make([]int, 3) // length 3, capacity 3; space efficiently allocated up front
 	slice2[0] = 11
 	slice2[1] = 22
 	slice2[2] = 33
