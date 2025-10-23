@@ -68,4 +68,14 @@ func main() {
 	var myBoolean0 bool = false
 	fmt.Println(myBoolean1) // output: true
 	fmt.Println(myBoolean0) // output: false
+
+	// Short Hand any variable declaration
+	myVar := "ashu"
+	fmt.Println(myVar)
+
+	var1, var2 := "A", 1
+	fmt.Println(var1, var2)
+
+	const constVar string = "Const Variable"
+	fmt.Println(constVar)
 }
