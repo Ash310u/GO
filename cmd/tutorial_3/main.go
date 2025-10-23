@@ -12,15 +12,16 @@ func main() {
 	fmt.Scan(&numerator, &denominator)
 
 	result, remainder, err := intDivisionAndQuotient(numerator, denominator)
-	// Using Print line: Println
+
 	if err != nil {
 		// Both lines print the error, but there's a subtle difference:
 		// fmt.Println(err) prints the error, which uses the Error() method internally, so it prints the error message.
 		// fmt.Println(err.Error()) calls Error() explicitly and prints the resulting string.
 		// In practice, for standard errors, these produce the same result.
-		fmt.Println(err)
-		fmt.Println(err.Error())
-	} else if remainder == 0 {
+
+		fmt.Println(err)         // Using Print line: Println
+		fmt.Println(err.Error()) // Using Print line: Println
+	} else if denominator == numerator || remainder == 0 {
 		fmt.Println("The result of the integer division is", result)
 	} else {
 		// Using Printf
