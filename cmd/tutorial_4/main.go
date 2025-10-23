@@ -27,13 +27,34 @@ func main() {
 	fmt.Println("Array5:", arr5)
 
 	// ---------------- Slices ----------------
-	slice := []string{"apple", "banana", "cherry"}
-	slice = append(slice, "date")
-	fmt.Println("Slice after append:", slice)
-	// slice[1:3] creates a new slice starting from index 1 (inclusive) up to index 4 (exclusive).
-	// In our example, slice = []string{"apple", "banana", "cherry", "date"}
-	// slice[1:3] will be []string{"banana", "cherry", "date"}
-	fmt.Println("Slice[1:3]:", slice[1:4])
+
+	// 1. Literal initialization (most common)
+	slice1 := []string{"apple", "banana", "cherry"}
+	// 2. Using make() to create a slice with length (and optional capacity)
+	slice2 := make([]int, 3) // length 3, capacity 3, zero-initialized
+	slice2[0] = 11
+	slice2[1] = 22
+	slice2[2] = 33
+	// 3. Creating a slice from an array
+	myArr := [4]float64{1.0, 2.2, 3.3, 4.4}
+	slice3 := myArr[1:3] // slice containing elements at index 1 and 2 (2.2, 3.3)
+	// 4. Declaring a nil slice
+	var slice4 []int
+	// 5. Creating an empty slice using a literal
+	slice5 := []byte{}
+
+	// Show different ways to create slices
+	fmt.Println("Slice1 (literal):", slice1)
+	fmt.Println("Slice2 (using make):", slice2)
+	fmt.Println("Slice3 (from array):", slice3)
+	fmt.Println("Slice4 (nil):", slice4)
+	fmt.Println("Slice5 (empty):", slice5)
+
+	// Append to a slice
+	slice1 = append(slice1, "date")
+	fmt.Println("Slice1 after append:", slice1)
+	// slice1[1:4] creates a new slice from index 1 up to 4 (exclusive)
+	fmt.Println("Slice1[1:4]:", slice1[1:4])
 
 	// ---------------- Maps ----------------
 	// The 'make' function is used in Go to create slices, maps, and channels.
@@ -53,8 +74,8 @@ func main() {
 		fmt.Println(i, arr1[i])
 	}
 
-	fmt.Println("\nLoop: slice values with range")
-	for index, val := range slice {
+	fmt.Println("\nLoop: slice1 values with range")
+	for index, val := range slice1 {
 		fmt.Printf("Index %d: %s\n", index, val)
 	}
 
