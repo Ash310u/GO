@@ -26,4 +26,13 @@ func main() {
 	fmt.Println("Array4:", arr4)
 	fmt.Println("Array5:", arr5)
 
+	// Slices
+	slice := []string{"apple", "banana", "cherry"}
+	slice = append(slice, "date")
+	fmt.Println("Slice after append:", slice)
+	// How does this work?
+	// slice[1:3] creates a new slice starting from index 1 (inclusive) up to index 4 (exclusive).
+	// In our example, slice = []string{"apple", "banana", "cherry", "date"}
+	// slice[1:3] will be []string{"banana", "cherry", "date"}
+	fmt.Println("Slice[1:3]:", slice[1:4])
 }
